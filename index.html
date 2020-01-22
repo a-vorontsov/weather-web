@@ -1,17 +1,19 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#00b4ff"/>
+    <meta name="theme-color" content="#00b4ff" />
     <title>weather</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/stylesheet.css"/>
+    <link rel="stylesheet" href="css/stylesheet.css" />
 </head>
+
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container p-md-5 p-sm-3 p-1">
-            <h1 align="center"class="display-4 monospace"><span class="code-green">~$</span>&nbsp;weather<span class="blink-me">|</span></h1>
+            <h1 align="center" class="display-4 monospace"><span class="code-yellow">~$</span>&nbsp;weather<span class="blink-me">|</span></h1>
         </div>
         <div class="container text-center p-md-5 p-sm-3 p-1">
             <a class="button-link col-md-5 col-lg-4 m-sm-1 m-md-2 m-lg-3 hidden-sm" href="https://github.com/a-vorontsov/weather/releases/download/v2.0.0/weather-mac.tar.xz" download="weather-mac.tar.xz">Download for macOS</a>
@@ -20,33 +22,25 @@
         </div>
     </div>
     <div id="background-wrap">
-        <div class="x1">
-            <div class="cloud"></div>
-        </div>
-        <div class="x2">
-            <div class="cloud"></div>
-        </div>
-        <div class="x3">
-            <div class="cloud"></div>
-        </div>
-        <div class="x4">
-            <div class="cloud"></div>
-        </div>
+        <div class="x1 cloud-wrapper"><div class="cloud"></div></div>
+        <div class="x2 cloud-wrapper"><div class="cloud"></div></div>
+        <div class="x3 cloud-wrapper"><div class="cloud"></div></div>
+        <div class="x4 cloud-wrapper"><div class="cloud"></div></div>
     </div>
     <div class="main-body container p-md-5 p-sm-3 p-1">
-        <h1 class="p-4">What is weather?</h1>
+        <h1 class="p-4">What is <span class="monospace">weather</span>?</h1>
         <p class="lead p-4">
-            weather is a command line tool for retrieving the weather forecast for your current location or a given city.
+            <span class="monospace">weather</span> is a command line tool for retrieving the weather forecast for your current location or a given city.
         </p>
-        <h1 class="p-4">How do get weather?</h1>
+        <h1 class="p-4">How do I get <span class="monospace">weather</span>?</h1>
         <nav>
-          <div class="nav nav-tabs text-center" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link col-md-4 col-3 active" id="nav-mac-tab" data-toggle="tab" href="#nav-mac" role="tab" aria-controls="nav-home" aria-selected="true">macOS/Linux</a>
-            <a class="nav-item nav-link col-md-4 col-3" id="nav-linux-tab" data-toggle="tab" href="#nav-linux" role="tab" aria-controls="nav-profile" aria-selected="false">Windows</a>
-          </div>
+            <div class="nav nav-tabs text-center" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link col-md-4 col-3 active" id="nav-mac-tab" data-toggle="tab" href="#nav-unix" role="tab" aria-controls="nav-home" aria-selected="true">mac/Linux</a>
+                <a class="nav-item nav-link col-md-4 col-3" id="nav-linux-tab" data-toggle="tab" href="#nav-windows" role="tab" aria-controls="nav-profile" aria-selected="false">Windows</a>
+            </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade lead p-md-5 p-sm-3 p-1 show active" id="nav-mac" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="tab-pane fade lead p-md-5 p-sm-3 p-1 show active" id="nav-unix" role="tabpanel" aria-labelledby="nav-home-tab">
                 <ul>
                     <li>Download the tar.xz archive to your machine</li>
                     <li>Extract the archive</li>
@@ -54,19 +48,26 @@
                     <li>Run <code> <i>weather</i></code></li>
                 </ul>
             </div>
-            <div class="tab-pane fade lead p-md-5 p-sm-3 p-1" id="nav-linux" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="tab-pane fade lead p-md-5 p-sm-3 p-1" id="nav-windows" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <ul>
                     <li>Download the zip archive to your machine</li>
                     <li>Extract the archive</li>
                     <li>Move file to a folder which is part of your <i>PATH</i></li>
-                    <li>Run <code>gud <i>[commands]</i></code> where <code><i>[commands]</i></code> are git arguments</li>
+                    <li>Run <code>gud <i>[commands]</i></code> where <code><i>[commands]</i></code> are git arguments
+                    </li>
                 </ul>
             </div>
         </div>
         <div>
-            <p>Source code for this project can be found at my <a class="text-only code-green" href="https://github.com/a-vorontsov/weather" target="_blank">Github Repository</a></p>
+            <p class="p-4">Source code for this project can be found at my <a class="text-only code-green" href="https://github.com/a-vorontsov/weather" target="_blank">Github Repository</a></p>
+        </div>
+        <div>
+            <button onclick="toggleAnimations();" id="anim-toggle" title="Toggle cloud animations">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+            </button>
         </div>
     </div>
+    <script src="scripts/script.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
