@@ -256,6 +256,9 @@ a.text-only:hover {
   h1 {
     font-size: 2rem;
   }
+  a.nav-item.nav-link {
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 786px) {
