@@ -34,7 +34,7 @@ code, .monospace {
 }
 
 code {
-  color: #ff4b00;
+  color: #f4f1ec;
 }
 
 .main-body {
@@ -51,11 +51,12 @@ a.text-only {
   height: 100%;
   width: auto;
   margin: 0;
-  color: #19b319
+  color: #f4f1ec;
+  text-decoration: underline;
 }
 
 a.text-only:hover {
-  color: #19b319;
+  color: #f4f1ec;
 }
 
 .button-link {
@@ -245,6 +246,16 @@ a.text-only:hover {
   .cloud {
     display: none;
   }
+
+  #anim-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 786px) {
@@ -331,7 +342,6 @@ a.text-only:hover {
   position: fixed;
   right: 48px;
   bottom: 48px;
-  display: inline-block;
   height: 48px;
   width: 48px;
   border-radius: 50%;
