@@ -334,17 +334,127 @@ a.text-only:hover {
   }
 }
 
-.x1.no-anim, .x2.no-anim, .x3.no-anim, .x4.no-anim {
+.x1.no-display, .x2.no-display, .x3.no-display, .x4.no-display {
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
   display: none;
 }
 
-#anim-toggle {
+.x1.no-anim, .x2.no-anim, .x3.no-anim, .x4.no-anim {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@-webkit-keyframes animateWidgetButton {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(56px);
+  }
+}
+
+@-moz-keyframes animateWidgetButton {
+  100% {
+    transform: translateX(0);
+  }
+  00% {
+    transform: translateX(56px);
+  }
+}
+
+@keyframes animateWidgetButton {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(56px);
+  }
+}
+
+@-webkit-keyframes animateWidgetButtonReverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(56px);
+  }
+}
+
+@-moz-keyframes animateWidgetButtonReverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(56px);
+  }
+}
+
+@keyframes animateWidgetButtonReverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(56px);
+  }
+}
+
+.widget-list {
   position: fixed;
   right: 48px;
   bottom: 48px;
+  height: 48px;
+  width: 104px;
+}
+
+#cloud-toggle {
+  position: absolute;
+  right: 56px;
+  z-index: 1;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 6px 6px 10px rgba(21, 20, 37, 0.1);
+}
+
+.widget-list > #cloud-toggle {
+  -webkit-animation: animateWidgetButtonReverse 300ms ease-in-out;
+  -moz-animation: animateWidgetButtonReverse 300ms ease-in-out;
+  animation: animateWidgetButtonReverse 300ms ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.widget-list:hover > #cloud-toggle {
+  -webkit-animation: animateWidgetButton 300ms ease-in-out;
+  -moz-animation: animateWidgetButton 300ms ease-in-out;
+  animation: animateWidgetButton 300ms ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#cloud-toggle:hover {
+  background-color: #f4f1ec;
+}
+
+#cloud-toggle:active {
+  background-color: #f4f1ec;
+}
+
+#cloud-toggle:focus {
+  outline: none;
+}
+
+#anim-toggle {
+  position: absolute;
+  z-index: 2;
+  right: 0;
   height: 48px;
   width: 48px;
   border-radius: 50%;
@@ -353,15 +463,11 @@ a.text-only:hover {
 }
 
 #anim-toggle:hover {
-  box-shadow: 6px 6px 10px rgba(21, 20, 37, 0.3);
   background-color: #f4f1ec;
-  transform: translateY(-2px);
 }
 
 #anim-toggle:active {
-  box-shadow: 6px 6px 10px rgba(21, 20, 37, 0.01);
   background-color: #f4f1ec;
-  transform: translateY(0px);
 }
 
 #anim-toggle:focus {
