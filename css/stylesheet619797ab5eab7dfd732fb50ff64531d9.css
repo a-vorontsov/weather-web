@@ -350,55 +350,55 @@ a.text-only:hover {
 
 @-webkit-keyframes animateWidgetButton {
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   0% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
 @-moz-keyframes animateWidgetButton {
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   00% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
 @keyframes animateWidgetButton {
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   0% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
 @-webkit-keyframes animateWidgetButtonReverse {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   100% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
 @-moz-keyframes animateWidgetButtonReverse {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   100% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
 @keyframes animateWidgetButtonReverse {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(-180deg);
   }
   100% {
-    transform: translateX(56px);
+    transform: translateX(56px) rotate(0);
   }
 }
 
