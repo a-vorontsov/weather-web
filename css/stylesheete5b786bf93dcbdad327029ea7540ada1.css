@@ -250,6 +250,9 @@ a.text-only:hover {
   #anim-toggle {
     display: none;
   }
+  #cloud-toggle {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
