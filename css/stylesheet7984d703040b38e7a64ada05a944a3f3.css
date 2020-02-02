@@ -476,3 +476,8 @@ a.text-only:hover {
 #anim-toggle:focus {
   outline: none;
 }
+
+#anim-toggle:disabled {
+  opacity: 0.8;
+  z-index: 0;
+}
